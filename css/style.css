@@ -2,3 +2,18 @@
   input boxes
   buttons
 */
+
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#createButton {
+  background-color: aliceblue;
+}
+
+#updateButton {
+  background-color: lightpink;
+}
