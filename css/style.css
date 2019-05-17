@@ -2,18 +2,106 @@
   input boxes
   buttons
 */
+body {
+  background: url(Nutrition_pic.jpg) no-repeat center center fixed;
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  /* background-position: 70%; */
+}
 
+
+h1 {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  color:lightgrey;
+}
 
 form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  
+}
+
+
+#keyInput {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+  
+}
+
+#valueInput {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+}
+
+#name {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+} 
+
+#weight {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+} 
+
+#height {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+} 
+
+#waist {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+} 
+
+#neck {
+  width: 50%;
+  margin: 7px auto 7px auto;
+  text-align: center;
+  height: 20px;
+} 
+
+p {
+  font-family: monospace;
+  margin: 7px auto 7px auto;
+}
+
+.genderDropDown {
+  width: 10%;
+  margin: 7px auto 50px auto;
 }
 
 #createButton {
-  background-color: aliceblue;
+  background-color: lightgray;
+  margin: 7px auto 1px auto;
+  border-radius: 7px;
+  font-size: 1em;
 }
 
 #updateButton {
   background-color: lightpink;
+  margin: 3.5px auto 3.5px auto;
+  border-radius: 7px;
+  font-size: 1em;
+}
+
+#deleteButton {
+  background-color: lightyellow;
+  margin: auto;
+  border-radius: 7px;
+  font-size: 1em;
 }
