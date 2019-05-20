@@ -45,16 +45,37 @@ var keyExists = function(key) {
 //event handlers for the buttons and ... possibly the inputboxes
   //preventdefault on button clicks
 $(document).ready(function() {
-  $('#createButton').click(function(event) {
+  
+  var currentKey = $("#keyInput").val();
+  var currentValue = $("#valueInput").val();
+
+  
+  $('#calculateButton').click(function(event) {
     event.preventDefault();
 
-    var currentKey = $("#keyInput").val();
-    var currentValue = $("#valueInput").val();
-    if (keyExists(currentKey)) {
-      //current key exists, do something error-handle-y
-    } else {
-      createItem(currentKey, currentValue);
+    function genderCalc() {
+      var x = document.getElementById("genderDropDown").value;
+      console.log(x)
+      if(x == "male"){
+         console.log("123");
+      }
     }
+
+    genderCalc();
+      
+      //   if (document.getElementsByClassName("genderDropDown") === "male") {
+      //     alert("male yo!");
+      //   }
+
+      //   // if (option value === female) {
+      //   //   return female calculation;
+      //   // }
+
+      //   if (keyExists(currentKey)) {
+      //     //current key exists, do something error-handle-y
+      //   } else {
+      //     createItem(currentKey, currentValue);
+      //   }
   });
 
   $('#updateButton').click(function(event) {
@@ -62,10 +83,17 @@ $(document).ready(function() {
 
     var currentKey = $("#keyInput").val();
     var currentValue = $("#valueInput").val();
-    if (keyExists(currentKey)) {
-      updateItem(currentKey, currentValue);
-    } else {
-      //current key doesnt exist, do stuff
-    }
+    
+  
+    // if (keyExists(currentKey)) {
+    //   updateItem(currentKey, currentValue);
+    // } else {
+    //   //current key doesnt exist, do stuff
+    // }
   });
+
+  $('#deleteButton').click(function (){
+    event.preventDefault();
+    clearEverything();
+  })
 });

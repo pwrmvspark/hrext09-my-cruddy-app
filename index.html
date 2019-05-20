@@ -8,28 +8,36 @@
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <h1>Welcome to the pwrMvsPark BodyFat% calculator!</h1>
-  <form>
-    <input id="keyInput" type="text" placeholder="key"></input>
-    <input id="valueInput" type="text" placeholder="value"></input>
-    <input id="name" type="text" placeholder="What is your first name?"></input>
+<div class="summary"> 
+<h3>This page was created to calculate/log, retrieve, modify, and delete your personalized health data. Please fill out the following below to being!</h3>
+</div>
+
+<form>
+    <!-- <input id="keyInput" type="text" placeholder="key"></input>
+    <input id="valueInput" type="text" placeholder="value"></input> -->
+    <input id="name" type="text" placeholder="What is the date today?"></input>
     <input id="weight" type="text" placeholder="What is your current weight in lbs?"></input>
     <input id="height" type="text" placeholder="What is your current height in inches?"></input>
     <input id="waist" type="text" placeholder="What is the circumference of your waist in inches?"></input>
     <input id="neck" type="text" placeholder="What is the circumference of your neck in inches?"></input>
 
-    <p>Please select biological gender from drop down below:</p>
-    <select class="genderDropDown">
+    <p>Please select assigned sex from drop down below:</p>
+    <select id="genderDropDown">
         <option value="male">Male</option>
         <option value="female">Female</option>
     </select>
 
-    <button id="createButton" type='submit'>Calculate BF%</button>
+    <div id="buttons">
+    <button id="calculateButton" type='submit'>Calculate BF%</button>
+    <button id="createButton" type='submit'>Log data</button>
     <button id="updateButton" type='submit'>Update</button>
-    <button id="deleteButton">Delete</button>
+    <button id="deleteButton">Clear Logs</button>
+    </div>
+
   </form>
   <script src='app/app.js'></script>
 </body>
