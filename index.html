@@ -13,23 +13,30 @@
 <body>
 <h1>Welcome to the pwrMvsPark BodyFat% calculator!</h1>
 <div class="summary"> 
-<h3>This page was created to calculate/log, retrieve, modify, and delete your personalized health data. Please fill out the following below to being!</h3>
+<h3>This page was created to calculate/log, retrieve, modify, and delete your personalized health data. <br><p> "In terms of your overall health, your body fat percentage can be one of the most useful numbers available to you, more than how much you weigh and even more than your Body Mass Index (BMI)."</p> <br>Please fill out the following below to begin!</h3>
 </div>
 
 <form>
     <!-- <input id="keyInput" type="text" placeholder="key"></input>
     <input id="valueInput" type="text" placeholder="value"></input> -->
-    <input id="name" type="text" placeholder="What is the date today?"></input>
-    <input id="weight" type="text" placeholder="What is your current weight in lbs?"></input>
-    <input id="height" type="text" placeholder="What is your current height in inches?"></input>
-    <input id="waist" type="text" placeholder="What is the circumference of your waist in inches?"></input>
-    <input id="neck" type="text" placeholder="What is the circumference of your neck in inches?"></input>
+    <p id="question">"What is your name?"</p> 
+    <input id="name" type="text" placeholder="name?"></input>
+    <p id="question">"What is your current weight in lbs?"</p> 
+    <input id="weight" type="text" placeholder="weight?"></input>
+    <p id="question">"What is your current height in inches?"</p> 
+    <input id="height" type="text" placeholder="height?"></input>
+    <p id="question">"What is the circumference of your waist (at belly button) in inches?"</p>
+    <input id="waist" type="text" placeholder="waist?"></input>
+    <p id="question">"What is the circumference of your neck in inches?</p>
+    <input id="neck" type="text" placeholder="neck?"></input>
 
-    <p>Please select assigned sex from drop down below:</p>
+    <p id="dropDown">Please select assigned sex from drop down below:</p>
     <select id="genderDropDown">
         <option value="male">Male</option>
         <option value="female">Female</option>
     </select>
+
+    <input id="hip" type="text" placeholder="What is the circumference of your hip in inches?"></input>
 
     <div id="buttons">
     <button id="calculateButton" type='submit'>Calculate BF%</button>
@@ -39,6 +46,11 @@
     </div>
 
   </form>
+
+  <div>
+  <footer id="footer">Contact me: ***ADD HYPERLINKED ICONS***</footer>
+  </div>
+
   <script src='app/app.js'></script>
 </body>
 </html>

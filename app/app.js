@@ -48,16 +48,24 @@ $(document).ready(function() {
   
   var currentKey = $("#keyInput").val();
   var currentValue = $("#valueInput").val();
-
   
+  
+
   $('#calculateButton').click(function(event) {
     event.preventDefault();
 
+    var height = document.getElementById("height").value * 2.54 ;
+    var waist = document.getElementById("waist").value * 2.54;
+    var neck = document.getElementById("neck").value * 2.54;
+
     function genderCalc() {
       var x = document.getElementById("genderDropDown").value;
-      console.log(x)
+      // console.log(x)
       if(x == "male"){
-         console.log("123");
+        //alert(Number(height) + Number(waist) + Number(neck));
+        alert(495 / ( 1.0324 - 0.19077 * Math.log10( Number(waist) - Number(neck) ) + 0.15456 * Math.log10( Number(height) ) ) - 450);
+      } else if (x == "female") {
+        alert( 495 / ( 1.29579 - 0.35004 * Math.log10( waist + hip - neck ) + 0.22100 * Math.log10( height ) ) - 450)
       }
     }
 
