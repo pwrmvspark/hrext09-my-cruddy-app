@@ -5,7 +5,7 @@
 body {
   background: url(/Users/pwrmvs/hrext09-my-cruddy-app/Clouds-wallpaper-HD-background.jpg) no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   
 }
 
@@ -14,12 +14,9 @@ font-family: monospace;
 display: flex;
 justify-content: center;
 text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
 font-size: 38px; 
-
 color:#99ff66;
 overflow: hidden; 
-
 white-space: nowrap; 
 margin: 100px auto 50px;
 animation: 
@@ -50,6 +47,15 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+p {
+  font-family: monospace;
+  color:#99ff66;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 }
 
 #class {
@@ -133,13 +139,13 @@ form {
   font-size: 1.75em;
   color: #ffc800;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  
 }
 
 #genderDropDown {
-  width: 10%;
+  width: 25%;
   margin: 7px auto 5px auto;
   font-family: monospace;
+  font-size: 18px;
 }
 
 #hip {
@@ -152,12 +158,14 @@ form {
   font-size: 1.3em;
 }
 
-#buttons {
+#buttonsContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
   /* background-color: blue;
   margin: 1px; */
+  position: relative;
+  
 }
 
 #calculateButton {
@@ -167,6 +175,7 @@ form {
   font-size: 1em;
   height: 37.5px;
   font-family: monospace;
+  cursor: pointer;
 }
 
 #createButton {
@@ -176,6 +185,7 @@ form {
   font-size: 1em;
   height: 37.5px;
   font-family: monospace;
+  cursor: pointer;
 }
 
 #updateButton {
@@ -185,6 +195,7 @@ form {
   font-size: 1em;
   height: 37.5px;
   font-family: monospace;
+  cursor: pointer;
 }
 
 #deleteButton {
@@ -194,6 +205,7 @@ form {
   font-size: 1em;
   height: 37.5px;
   font-family: monospace;
+  cursor: pointer;
 }
 
 #footer {
@@ -207,4 +219,63 @@ form {
   display: flex;
   justify-content: center;
 
+}
+
+/* Popup container */
+.popup {
+  position: relative;
+  /* display: inline-block; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(55, 164, 162);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(55, 164, 162) transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+a {
+  color: #1affff;
 }

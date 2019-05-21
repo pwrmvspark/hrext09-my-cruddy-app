@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title>pwrMvsPark BF% Calculator!</title>
   <script
-          src="https://code.jquery.com/jquery-3.3.1.js"
-          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -21,14 +22,14 @@
     <input id="valueInput" type="text" placeholder="value"></input> -->
     <p id="question">"What is your name?"</p> 
     <input id="name" type="text" placeholder="name?"></input>
-    <p id="question">"What is your current weight in lbs?"</p> 
-    <input id="weight" type="text" placeholder="weight?"></input>
+    <!-- <p id="question">"What is your current weight in lbs?"</p> 
+    <input id="weight" type="text" placeholder="weight?"></input> -->
     <p id="question">"What is your current height in inches?"</p> 
-    <input id="height" type="text" placeholder="height?"></input>
+    <input id="height" type="text" placeholder="height in inches?"></input>
     <p id="question">"What is the circumference of your waist (at belly button) in inches?"</p>
-    <input id="waist" type="text" placeholder="waist?"></input>
+    <input id="waist" type="text" placeholder="waist circumference?"></input>
     <p id="question">"What is the circumference of your neck in inches?</p>
-    <input id="neck" type="text" placeholder="neck?"></input>
+    <input id="neck" type="text" placeholder="neck circumference?"></input>
 
     <p id="dropDown">Please select assigned sex from drop down below:</p>
     <select id="genderDropDown">
@@ -36,19 +37,26 @@
         <option value="female">Female</option>
     </select>
 
-    <input id="hip" type="text" placeholder="What is the circumference of your hip in inches?"></input>
+    <p id="question">(Female Only) What is the circumference of your hip in inches?</p>
+    <input id="hip" type="text" placeholder="hip circumference?"></input>
 
-    <div id="buttons">
-    <button id="calculateButton" type='submit'>Calculate BF%</button>
-    <button id="createButton" type='submit'>Log data</button>
-    <button id="updateButton" type='submit'>Update</button>
+    <div id="buttonsContainer">
+    <button id="calculateButton" type='submit'>Calculate/Store BF%</button>
+    <!-- <button id="createButton" type='submit'>Log data</button> -->
+    <!-- <button id="updateButton" type='submit'>Update</button> -->
     <button id="deleteButton">Clear Logs</button>
+    </div>
+
+    <div class="popup" onclick="myFunction()">
+        <span class="popuptext" id="myPopup">Hi **name**, your BF% is:</span>
     </div>
 
   </form>
 
   <div>
-  <footer id="footer">Contact me: ***ADD HYPERLINKED ICONS***</footer>
+  <footer id="footer">Contact me: 
+    <a href="mailto:danielparkonline@gmail.com">danielparkonline@gmail.com</a>
+  </footer>
   </div>
 
   <script src='app/app.js'></script>

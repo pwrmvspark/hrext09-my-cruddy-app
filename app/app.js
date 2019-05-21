@@ -40,64 +40,54 @@ var keyExists = function(key) {
   return currentValue !== null;
 }
 
+  
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
 
 ///////////////////////////////////////////
 //event handlers for the buttons and ... possibly the inputboxes
   //preventdefault on button clicks
 $(document).ready(function() {
   
-  var currentKey = $("#keyInput").val();
-  var currentValue = $("#valueInput").val();
+  let currentKey = $("#keyInput").val();
+  let currentValue = $("#valueInput").val();
+  // let height = document.getElementById("height").value * 2.54 ;
+  // let waist = document.getElementById("waist").value * 2.54;
+  // let neck = document.getElementById("neck").value * 2.54;
+  // let hip = document.getElementById("hip").value * 2.54;
+  let popup = document.getElementById("myPopup");
   
   
+
 
   $('#calculateButton').click(function(event) {
     event.preventDefault();
 
+    var name = document.getElementById("name").value;
     var height = document.getElementById("height").value * 2.54 ;
     var waist = document.getElementById("waist").value * 2.54;
     var neck = document.getElementById("neck").value * 2.54;
-
+    var hip = document.getElementById("hip").value * 2.54;
+    
     function genderCalc() {
       var x = document.getElementById("genderDropDown").value;
-      // console.log(x)
       if(x == "male"){
-        //alert(Number(height) + Number(waist) + Number(neck));
-        alert(495 / ( 1.0324 - 0.19077 * Math.log10( Number(waist) - Number(neck) ) + 0.15456 * Math.log10( Number(height) ) ) - 450);
+        bodyfat = (495 / ( 1.0324 - 0.19077 * Math.log10( Number(waist) - Number(neck) ) + 0.15456 * Math.log10( Number(height) ) ) - 450).toFixed(2);
+        // alert(bodyfat);
+        popup.classList.toggle("show");
       } else if (x == "female") {
-        alert( 495 / ( 1.29579 - 0.35004 * Math.log10( waist + hip - neck ) + 0.22100 * Math.log10( height ) ) - 450)
+        bodyfat = (495 / ( 1.29579 - 0.35004 * Math.log10( Number(waist) + Number(hip) - Number(neck) ) + 0.22100 * Math.log10( Number(height) ) ) - 450).toFixed(2);
+        // alert(bodyfat);
+        popup.classList.toggle("show");
       }
     }
 
     genderCalc();
-      
-      //   if (document.getElementsByClassName("genderDropDown") === "male") {
-      //     alert("male yo!");
-      //   }
-
-      //   // if (option value === female) {
-      //   //   return female calculation;
-      //   // }
-
-      //   if (keyExists(currentKey)) {
-      //     //current key exists, do something error-handle-y
-      //   } else {
-      //     createItem(currentKey, currentValue);
-      //   }
-  });
-
-  $('#updateButton').click(function(event) {
-    event.preventDefault();
-
-    var currentKey = $("#keyInput").val();
-    var currentValue = $("#valueInput").val();
     
-  
-    // if (keyExists(currentKey)) {
-    //   updateItem(currentKey, currentValue);
-    // } else {
-    //   //current key doesnt exist, do stuff
-    // }
+    createItem(name, bodyfat);
+
   });
 
   $('#deleteButton').click(function (){
@@ -105,3 +95,8 @@ $(document).ready(function() {
     clearEverything();
   })
 });
+
+// create alerts when form isnt completed filled out.
+// make site responsive?
+// add name to pop up box
+// add  bf% to pop up box
