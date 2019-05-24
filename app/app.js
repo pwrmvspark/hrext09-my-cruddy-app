@@ -91,6 +91,12 @@ $(document).ready(function() {
     $("#popupFat").html(bodyfat.toString());
   });
 
+
+
+
+
+
+
   $("#lookupButton").click(function () {
     console.log("working");
     const userLookUp = document.getElementById("userLookUp").value;
@@ -98,7 +104,17 @@ $(document).ready(function() {
     if (keyExists(userLookUp)) {
       $("#lookupFat").html(getItem(userLookUp));
     }
+
+    popup.classList.toggle("show");
+
+    $("#popupName2").html(userLookUp);
+    $("#popupFat2").html(getItem(key));
   })
+
+
+
+
+
 
   $('#deleteButton').click(function (){
     event.preventDefault();
@@ -113,3 +129,4 @@ $(document).ready(function() {
 
 // make site responsive?
 
+//make delete button for specific key/value
