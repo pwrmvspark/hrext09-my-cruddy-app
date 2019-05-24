@@ -58,9 +58,8 @@ $(document).ready(function() {
   // let neck = document.getElementById("neck").value * 2.54;
   // let hip = document.getElementById("hip").value * 2.54;
   let popup = document.getElementById("myPopup");
-  
-  
 
+  
 
   $('#calculateButton').click(function(event) {
     event.preventDefault();
@@ -88,15 +87,29 @@ $(document).ready(function() {
     
     createItem(name, bodyfat);
 
+    $("#popupName").html(name);
+    $("#popupFat").html(bodyfat.toString());
   });
+
+  $("#lookupButton").click(function () {
+    console.log("working");
+    const userLookUp = document.getElementById("userLookUp").value;
+
+    if (keyExists(userLookUp)) {
+      $("#lookupFat").html(getItem(userLookUp));
+    }
+  })
 
   $('#deleteButton').click(function (){
     event.preventDefault();
     clearEverything();
   })
+
 });
 
 // create alerts when form isnt completed filled out.
+  // if drop down is female, then make hip input required.
+  // if drop down is male and hip input is filled, alert
+
 // make site responsive?
-// add name to pop up box
-// add  bf% to pop up box
+

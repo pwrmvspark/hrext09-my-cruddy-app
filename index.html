@@ -20,15 +20,15 @@
 <form>
     <!-- <input id="keyInput" type="text" placeholder="key"></input>
     <input id="valueInput" type="text" placeholder="value"></input> -->
-    <p id="question">"What is your name?"</p> 
+    <p id="question">What is your name?</p> 
     <input id="name" type="text" placeholder="name?"></input>
     <!-- <p id="question">"What is your current weight in lbs?"</p> 
     <input id="weight" type="text" placeholder="weight?"></input> -->
-    <p id="question">"What is your current height in inches?"</p> 
+    <p id="question">What is your current height in inches?</p> 
     <input id="height" type="text" placeholder="height in inches?"></input>
-    <p id="question">"What is the circumference of your waist (at belly button) in inches?"</p>
+    <p id="question">What is the circumference of your waist (at belly button) in inches?</p>
     <input id="waist" type="text" placeholder="waist circumference?"></input>
-    <p id="question">"What is the circumference of your neck in inches?</p>
+    <p id="question">What is the circumference of your neck in inches?</p>
     <input id="neck" type="text" placeholder="neck circumference?"></input>
 
     <p id="dropDown">Please select assigned sex from drop down below:</p>
@@ -37,7 +37,7 @@
         <option value="female">Female</option>
     </select>
 
-    <p id="question">(Female Only) What is the circumference of your hip in inches?</p>
+    <p id="femalequestion">(Female Only) What is the circumference of your hip in inches?</p>
     <input id="hip" type="text" placeholder="hip circumference?"></input>
 
     <div id="buttonsContainer">
@@ -45,13 +45,22 @@
     <!-- <button id="createButton" type='submit'>Log data</button> -->
     <!-- <button id="updateButton" type='submit'>Update</button> -->
     <button id="deleteButton">Clear Logs</button>
+   
     </div>
 
     <div class="popup" onclick="myFunction()">
-        <span class="popuptext" id="myPopup">Hi **name**, your BF% is:</span>
+        <span class="popuptext" id="myPopup">Hi <span id="popupName"></span>, your BF% is: <span id="popupFat"></span></span>
     </div>
 
   </form>
+
+  <div class="lookup">
+    <p id="question">Look up previously logged data here!</p>
+    <input id="userLookUp" type="text" placeholder="What is your first name?"></input> 
+    <button id="lookupButton">Search</button>
+    <div id="lookupFat"></div>
+  </div>
+
 
   <div>
   <footer id="footer">Contact me: 
